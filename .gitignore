@@ -1,0 +1,10 @@
+# Decompiled reference packages extracted from the installed DSH app.asar
+# (~38 MB of third-party source used only as local documentation while
+# developing this plugin). Not part of the plugin; tools/*.mjs read it when
+# present, so re-extract it before running them (see tools/asar.mjs).
+.ref/
+
+# Local install artifacts
+node_modules/
+*.log
+.DS_Store
