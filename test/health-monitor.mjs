@@ -203,7 +203,7 @@ for (const a of alerts) console.log(`    [${a.severity}/${a.category}] ${a.title
 /* ---- assertions ---- */
 let failed = 0;
 const must = (cond, msg) => { if (!cond) { console.error('FAIL:', msg); failed++; } else console.log('PASS:', msg); };
-must(exports.name === '@local/dsh-checkup', 'name matches package');
+must(exports.name === 'dsh-checkup', 'name matches package');
 must(Array.isArray(exports.inject) && exports.inject.includes('slots'), 'declares slots inject');
 must(typeof exports.apply === 'function', 'apply is a function');
 // The overlay banner was removed on purpose: a permanent occupant of the

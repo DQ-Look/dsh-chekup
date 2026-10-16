@@ -1,5 +1,5 @@
 /**
- * `@local/dsh-checkup` — client (renderer) half.
+ * `dsh-checkup` — client (renderer) half.
  *
  * Hand-written classic script (no ESM/JSX/TS), classic-script transport.
  * Registers one lazy CJS factory whose `id` equals the package name.
@@ -38,7 +38,7 @@
  * (see index.js).
  */
 window.__ModuleLoader__.load({
-  id: '@local/dsh-checkup',
+  id: 'dsh-checkup',
   factory(require) {
     const React = require('react');
     const h = React.createElement;
@@ -85,7 +85,7 @@ window.__ModuleLoader__.load({
     if (typeof document !== 'undefined' &&
         document.querySelector('style[data-plugin-css="dsh-hm/health"]') === null) {
       const tag = document.createElement('style');
-      tag.setAttribute('data-plugin', '@local/dsh-checkup');
+      tag.setAttribute('data-plugin', 'dsh-checkup');
       tag.setAttribute('data-plugin-css', 'dsh-hm/health');
       tag.textContent = CSS;
       document.head.appendChild(tag);
@@ -523,7 +523,7 @@ window.__ModuleLoader__.load({
     function buildSnapshot() {
       return {
         capturedAt: new Date().toISOString(),
-        source: '@local/dsh-checkup',
+        source: 'dsh-checkup',
         dshVersion: (typeof window !== 'undefined' && window.__DSH_BOOT__ && window.__DSH_BOOT__.rev) || null,
         stats: store.stats,
         healthy: store.healthy,
@@ -965,6 +965,6 @@ window.__ModuleLoader__.load({
       }, 'health-monitor: teardown');
     }
 
-    return { name: '@local/dsh-checkup', inject: ['slots', 'locale', 'remote', 'remote.pluginInventory'], apply };
+    return { name: 'dsh-checkup', inject: ['slots', 'locale', 'remote', 'remote.pluginInventory'], apply };
   }
 });

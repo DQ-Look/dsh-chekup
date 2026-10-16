@@ -29,12 +29,12 @@ dsh plugin --profile <profile> add https://github.com/DQ-Deng/dsh-chekup.git
 dsh --profile <profile> --dump-config | grep dsh-checkup
 ```
 
-如果设置里没出现，打开开发者工具看 Network 里 `plugins/??@local/dsh-checkup/client.js` 是否返回 200。
+如果设置里没出现，打开开发者工具看 Network 里 `plugins/??dsh-checkup/client.js` 是否返回 200。
 
 ### 卸载
 
 ```bash
-dsh plugin --profile <profile> remove @local/dsh-checkup
+dsh plugin --profile <profile> remove dsh-checkup
 ```
 
 ---
@@ -112,7 +112,7 @@ node test/health-monitor-boot.mjs   # 用真实 dsh-client-modules 模块系统�
 ```
 
 三个名字必须完全一致，否则真实模块系统无法解析：
-`__ModuleLoader__.load({ id })` 的 `id`、`cordis.patch.yml` 的 `name`、`package.json` 的 `name`，均为 `@local/dsh-checkup`。
+`__ModuleLoader__.load({ id })` 的 `id`、`cordis.patch.yml` 的 `name`、`package.json` 的 `name`，均为 `dsh-checkup`。
 
 ---
 

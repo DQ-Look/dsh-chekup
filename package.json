@@ -1,5 +1,5 @@
 {
-  "name": "@local/dsh-checkup",
+  "name": "dsh-checkup",
   "version": "0.1.0",
   "private": true,
   "type": "module",

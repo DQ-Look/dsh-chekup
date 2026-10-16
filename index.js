@@ -1,5 +1,5 @@
 /**
- * Host half of `@local/dsh-checkup`.
+ * Host half of `dsh-checkup`.
  *
  * This plugin's value is entirely on the client (renderer) side: the slots
  * ledger and the in-UI alert surface (`shell.overlay`, `settings.section`)

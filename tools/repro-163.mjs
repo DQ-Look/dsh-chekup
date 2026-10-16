@@ -51,7 +51,7 @@ for (const [p, id] of [
   ['@cckbc/dsh-session-recycle-bin', 'delete-session'],
   ['@liustack/modsearch', 'modsearch'],
   ['dsh-plugin', 'dsh-plugin'],
-  ['@local/dsh-checkup', 'dsh-checkup'],
+  ['dsh-checkup', 'dsh-checkup'],
 ]) {
   const f = `C:/Users/PC/.dsh/profiles/desktop/node_modules/${p}/cordis.patch.yml`;
   if (!existsSync(f)) continue;
@@ -87,7 +87,7 @@ for (const f of walk(header.files)) {
     if (j?.dsh?.client?.platform === 'web') clientPkgs.add(j.name);
   } catch { /* ignore */ }
 }
-for (const p of ['@cckbc/dsh-session-recycle-bin', '@liustack/modsearch', 'dsh-plugin', '@local/dsh-checkup']) {
+for (const p of ['@cckbc/dsh-session-recycle-bin', '@liustack/modsearch', 'dsh-plugin', 'dsh-checkup']) {
   clientPkgs.add(p);
 }
 console.log(`\nclient-half packages: ${clientPkgs.size}`);

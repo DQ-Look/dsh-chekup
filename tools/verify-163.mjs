@@ -64,7 +64,7 @@ const files = [
   `${NM}/@cckbc/dsh-session-recycle-bin/cordis.patch.yml`,
   `${NM}/@liustack/modsearch/cordis.patch.yml`,
   `${NM}/dsh-plugin/cordis.patch.yml`,
-  `${NM}/@local/dsh-checkup/cordis.patch.yml`,
+  `${NM}/dsh-checkup/cordis.patch.yml`,
 ];
 
 const allRows = [];
@@ -74,7 +74,7 @@ const topLevel = named.filter((r) => !r.isPresetRow);
 const nested = named.filter((r) => r.isPresetRow);
 
 // client-half package set, read from the INSTALLED app.asar
-const clientPkgs = new Set(['@cckbc/dsh-session-recycle-bin', '@liustack/modsearch', 'dsh-plugin', '@local/dsh-checkup']);
+const clientPkgs = new Set(['@cckbc/dsh-session-recycle-bin', '@liustack/modsearch', 'dsh-plugin', 'dsh-checkup']);
 {
   const ASAR = 'D:/ProgramFiles/DeepSeek Harness/resources/app.asar';
   const fd = readFileSync(ASAR);

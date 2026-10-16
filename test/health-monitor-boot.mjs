@@ -1,5 +1,5 @@
 /**
- * End-to-end boot of @local/dsh-checkup through the REAL DSH
+ * End-to-end boot of dsh-checkup through the REAL DSH
  * browser module system (dsh-client-modules/lib/client.js), exactly like
  * .ref/skeleton/harness.mjs. Proves the classic-script contract holds:
  * id === package name, factory materializes, apply() registers its slots.
@@ -48,8 +48,8 @@ console.log('[1] modules bundle registered:', queue.map((r) => r.id));
 const MODULES_ID = '@deepseek-ai/dsh-client-modules';
 const boot = {
   rev: 'harness-rev',
-  entries: [{ id: '@local/dsh-checkup', url: 'plugins/??@local/dsh-checkup/client.js&rev=abc', rev: 'abc', external: [] }],
-  batches: [{ phase: 'application', url: 'plugins/??@local/dsh-checkup/client.js&rev=abc', rev: 'abc', entries: ['@local/dsh-checkup'] }]
+  entries: [{ id: 'dsh-checkup', url: 'plugins/??dsh-checkup/client.js&rev=abc', rev: 'abc', external: [] }],
+  batches: [{ phase: 'application', url: 'plugins/??dsh-checkup/client.js&rev=abc', rev: 'abc', entries: ['dsh-checkup'] }]
 };
 const React = { createElement: (...a) => ({ type: a[0], props: a[1] ?? {}, children: a.slice(2) }) };
 const staticModules = {
@@ -74,7 +74,7 @@ const modules = facade.create({ boot, staticModules, loadBundle });
 console.log('[2] module system created; graph rows =', modules.manifest.modules.map((r) => r.id));
 
 /* import the plugin row */
-const pluginExports = await modules.import('@local/dsh-checkup');
+const pluginExports = await modules.import('dsh-checkup');
 console.log('[3] transported URLs:', transports);
 console.log('[4] plugin exports:', Object.keys(pluginExports));
 console.log('    name   =', pluginExports.name);
